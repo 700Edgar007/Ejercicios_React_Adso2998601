@@ -1,17 +1,117 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//crear un arreglo de objetos que representen productos id nombre del producto precio y stoc7
+// incluya funciones para buscar productos por id y por nombre
+// implemente una funcion ue simule una compra usando promesas con resolve y reject
+//la venta sera efectiva resolve es logica buena y reject es logica mala
+import { getProductoNEWById } from './19_05_2025/Impor_Expor_Productos';
+import { getProductoNEWByNombre } from './19_05_2025/Impor_Expor_Productos';
+import { venta } from './19_05_2025/Impor_Expor_Productos';
+import { MostrarTodo } from './19_05_2025/Impor_Expor_Productos';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// console.log(getProductoNEWById(10));
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+const getProductoNEWByIdAsync = (id) => {
+
+    return new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+           const p1 = getProductoNEWById(id);
+           if (p1) {
+               resolve(p1);
+           }else{
+               reject('No se encontro el heroe');
+           }
+
+        }, 5000);
+    });
+};
+// getProductoNEWByIdAsync(10)
+// .then(console.table)
+// .catch(console.error);
+
+const getProductoNEWByNameAsync = (nombre) => {
+
+    return new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+           const p1 = getProductoNEWByNombre(nombre);
+           if (p1) {
+               resolve(p1);
+           }else{
+               reject('Luis es una putaaaaa');
+           }
+
+
+
+        }, 2000);
+
+
+
+        
+    });
+
+};
+
+setTimeout(() => {
+            console.table("ahora se mostrar la venta ");
+        }, 2000);
+
+
+getProductoNEWByNameAsync('Smartphone')
+.then(console.table)
+.catch(console.error);
+
+const comprarProducto = (nombre,stock) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const p1 = venta(nombre,stock);
+            if (p1) {
+                resolve(p1);
+            }else{
+                reject('No se encontro el producto');
+            }
+        }, 2000);
+    });
+};
+
+comprarProducto('Smartphone',1)
+.then(console.table)
+.catch(console.error);
+
+
+const MostrarTodoAsync = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const p1 = MostrarTodo();
+            if (p1) {
+                resolve(p1);
+            }else{
+                reject('No se encontro el producto');
+            }
+        }, 3000);
+    });
+};
+MostrarTodoAsync()
+.then(console.table)
+.catch(console.error);
+
+const MostrarTodoAsync1 = () => {
+    return new Promise((resolve, reject) => {
+        
+            const p1 = MostrarTodo();
+            if (p1) {
+                resolve(p1);
+            }else{
+                reject('No se encontro el producto');
+            }
+        
+    });
+};
+
+MostrarTodoAsync1()
+.then(console.table)
+.catch(console.error);
+
+
+
+
