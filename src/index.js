@@ -52,9 +52,7 @@ const getProductoNEWByNameAsync = (nombre) => {
 
 };
 
-setTimeout(() => {
-            console.table("ahora se mostrar la venta ");
-        }, 2000);
+
 
 
 getProductoNEWByNameAsync('Smartphone')
@@ -91,27 +89,7 @@ const MostrarTodoAsync = () => {
         }, 3000);
     });
 };
+
 MostrarTodoAsync()
 .then(console.table)
 .catch(console.error);
-
-const MostrarTodoAsync1 = () => {
-    return new Promise((resolve, reject) => {
-        
-            const p1 = MostrarTodo();
-            if (p1) {
-                resolve(p1);
-            }else{
-                reject('No se encontro el producto');
-            }
-        
-    });
-};
-
-MostrarTodoAsync1()
-.then(console.table)
-.catch(console.error);
-
-
-
-
