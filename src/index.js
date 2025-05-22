@@ -2,10 +2,10 @@
 // incluya funciones para buscar productos por id y por nombre
 // implemente una funcion ue simule una compra usando promesas con resolve y reject
 //la venta sera efectiva resolve es logica buena y reject es logica mala
-import { getProductoNEWById } from './19_05_2025/Impor_Expor_Productos';
-import { getProductoNEWByNombre } from './19_05_2025/Impor_Expor_Productos';
-import { venta } from './19_05_2025/Impor_Expor_Productos';
-import { MostrarTodo } from './19_05_2025/Impor_Expor_Productos';
+import { getProductoNEWById } from './bases/Impor_Expor_Productos';
+import { getProductoNEWByNombre } from './bases/Impor_Expor_Productos';
+import { venta } from './bases/Impor_Expor_Productos';
+import { MostrarTodo } from './bases/Impor_Expor_Productos';
 
 // console.log(getProductoNEWById(10));
 
